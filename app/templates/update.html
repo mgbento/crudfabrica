@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Update {% endblock %}
+
+{% block body %}
+<form method="post">
+    <h1>Atualizar Dados</h1>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button >Salvar</button>
+    <a href="{% url 'list' %}">Voltar</a>
+</form>
+{% endblock %}

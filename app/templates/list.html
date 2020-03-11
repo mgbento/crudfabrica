@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} List {% endblock %}
+
+{% block body %}
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Idade</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for pessoa in pessoa %}
+    <tr>
+
+        <td><a href="{% url 'update' pessoa.id %}">{{pessoa.nome}}</a></td>
+        <td>{{pessoa.sobrenome}}</td>
+        <td>{{pessoa.idade}}</td>
+        <td><a href="{% url 'delete' pessoa.id %}">Deletar</a></td>
+        <td><a href="{% url 'create' %}">Criar</a> </td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</form>
+{% endblock %}
